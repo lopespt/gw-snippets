@@ -1,0 +1,25 @@
+
+#######################################################################
+#                          General Functions                          #
+#######################################################################
+
+global !p
+
+def abc():
+	return 'testesadsad'
+
+endglobal
+
+#######################################################################
+#                              Snippets                               #
+#######################################################################
+snippet tic "chronos timer" b
+std::chrono::steady_clock::time_point ${1:teste} = std::chrono::steady_clock::now ();
+`!p snip.rv=abc()`
+endsnippet
+
+
+snippet tac "chronos timer" b
+std::cout << "" << std::chrono::duration_cast<std::chrono::nanoseconds> (end - begin).count ()
+<< "" << std::endl;
+endsnippet
